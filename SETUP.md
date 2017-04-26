@@ -35,7 +35,7 @@ cd /wso2
 ### Replace ${carbon.local.ip} with host
 `<GatewayEndpoint>http://${carbon.local.ip}:${http.nio.port},https://${carbon.local.ip}:${https.nio.port}</GatewayEndpoint>`
 
-`vi /wso2/wso2am-2.1.0/repository/conf/carbon.xml
+`vi /wso2/wso2am-2.1.0/repository/conf/carbon.xml`
  ### Uncomment and modify with server host
 ```
 <!--HostName>www.wso2.org</HostName-->
