@@ -31,13 +31,14 @@ cd /wso2
 `unzip wso2am-2.1.0.zip`
 
 ## Modify the host
-`vi /wso2/wso2am-2.1.0/repository/conf/api-manager.xml`
 ### Replace ${carbon.local.ip} with host
-`<GatewayEndpoint>http://${carbon.local.ip}:${http.nio.port},https://${carbon.local.ip}:${https.nio.port}</GatewayEndpoint>`
-
-`vi /wso2/wso2am-2.1.0/repository/conf/carbon.xml`
+```
+vi /wso2/wso2am-2.1.0/repository/conf/api-manager.xml
+<GatewayEndpoint>http://${carbon.local.ip}:${http.nio.port},https://${carbon.local.ip}:${https.nio.port}</GatewayEndpoint>
+```
  ### Uncomment and modify with server host
 ```
+vi /wso2/wso2am-2.1.0/repository/conf/carbon.xml
 <!--HostName>www.wso2.org</HostName-->
 <!--MgtHostName>mgt.wso2.org</MgtHostName-->
 ```
