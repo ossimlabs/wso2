@@ -1,0 +1,11 @@
+{
+	"endpoint_type":"http",
+	"production_endpoints":{ 
+		"url":"https://omar-rel.ossim.io",
+		"config":null
+	},
+	"sandbox_endpoints":{
+		"url":"https://omar-dev.ossim.io",
+		"config":null
+	}
+}

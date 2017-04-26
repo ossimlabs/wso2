@@ -1,0 +1,1034 @@
+{
+    "info": {
+        "title": "OMAR",
+        "version":"v1"
+    },
+    "paths": {
+        "/omar-avro/avro/addFile": {
+            "post": {
+                "parameters": [
+                    {
+                        "description": "File to have posted and indexed",
+                        "in": "body",
+                        "name": "filename",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": { "200": {} },
+                "summary": "Add a file",
+                "x-auth-type": "Application & Application User",
+                "x-throttling-tier": "Unlimited"
+            }
+        },
+        "/omar-avro/avro/addMessage": {
+            "post": {
+                "parameters": [
+                    {
+                        "description": "",
+                        "in": "body",
+                        "name": "body",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": { "200": {} },
+                "summary": "Add message",
+                "x-auth-type": "Application & Application User",
+                "x-throttling-tier": "Unlimited"
+            }
+        },
+        "/omar-avro/avro/listFiles": {
+            "get": {
+                "parameters": [
+                    {
+                        "description": "Process status",
+                        "in": "query",
+                        "name": "limit",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "description": "Process Id",
+                        "in": "query",
+                        "name": "offset",
+                        "required": false,
+                        "type": "integer"
+                    }
+                ],
+                "responses": { "200": {} },
+                "summary": "List files",
+                "x-auth-type": "Application & Application User",
+                "x-throttling-tier": "Unlimited"
+            }
+        },
+        "/omar-avro/avro/listMessages": {
+            "get": {
+                "parameters": [
+                    {
+                        "description": "Process status",
+                        "in": "query",
+                        "name": "limit",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "description": "Process Id",
+                        "in": "query",
+                        "name": "offset",
+                        "required": false,
+                        "type": "integer"
+                    }
+                ],
+                "responses": { "200": {} },
+                "summary": "List messages",
+                "x-auth-type": "Application & Application User",
+                "x-throttling-tier": "Unlimited"
+            }
+        },
+        "/omar-avro/avro/resetFileProcessingStatus": {
+            "post": {
+                "parameters": [
+                    {
+                        "description": "",
+                        "in": "query",
+                        "name": "processId",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "description": "",
+                        "in": "query",
+                        "name": "status",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "description": "",
+                        "in": "query",
+                        "name": "whereStatusEquals",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "responses": { "200": {} },
+                "summary": "Reset file processing status",
+                "x-auth-type": "Application & Application User",
+                "x-throttling-tier": "Unlimited"
+            }
+        },
+        "/omar-avro/avro/ingestMetrics/delete": {
+            "get": {
+                "parameters": [
+                    {
+                        "description": "End date for the date range",
+                        "in": "query",
+                        "name": "endDate",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "description": "ID Used to identify the ingest record",
+                        "in": "query",
+                        "name": "ingestId",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "description": "Start date for the date range",
+                        "in": "query",
+                        "name": "startDate",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "responses": { "200": {} },
+                "summary": "Allows one to delete records from the ingest database",
+                "x-auth-type": "Application & Application User",
+                "x-throttling-tier": "Unlimited"
+            }
+        },
+        "/omar-avro/avro/ingestMetrics/endCopy": {
+            "get": {
+                "parameters": [
+                    {
+                        "description": "ID Used to identify the ingest record",
+                        "in": "query",
+                        "name": "ingestId",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "responses": { "200": {} },
+                "summary": "Marks the end of the copy process",
+                "x-auth-type": "Application & Application User",
+                "x-throttling-tier": "Unlimited"
+            }
+        },
+        "/omar-avro/avro/ingestMetrics/endIngest": {
+            "get": {
+                "parameters": [
+                    {
+                        "description": "ID Used to identify the ingest record",
+                        "in": "query",
+                        "name": "ingestId",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "responses": { "200": {} },
+                "summary": "Marks the end of the ingest process",
+                "x-auth-type": "Application & Application User",
+                "x-throttling-tier": "Unlimited"
+            }
+        },
+        "/omar-avro/avro/ingestMetrics/endStaging": {
+            "get": {
+                "parameters": [
+                    {
+                        "description": "ID Used to identify the ingest record",
+                        "in": "query",
+                        "name": "ingestId",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "responses": { "200": {} },
+                "summary": "Marks the end of the staging process",
+                "x-auth-type": "Application & Application User",
+                "x-throttling-tier": "Unlimited"
+            }
+        },
+        "/omar-avro/avro/ingestMetrics/list": {
+            "get": {
+                "parameters": [
+                    {
+                        "description": "End date for the date range",
+                        "in": "query",
+                        "name": "endDate",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "description": "ID Used to identify the ingest record",
+                        "in": "query",
+                        "name": "ingestId",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "description": "Max records to return",
+                        "in": "query",
+                        "name": "limit",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "description": "",
+                        "in": "query",
+                        "name": "offset",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "description": "Order",
+                        "in": "query",
+                        "name": "order",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "description": "Sort by",
+                        "in": "query",
+                        "name": "sortBy",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "responses": { "200": {} },
+                "summary": "Allows one to list records from the ingest database",
+                "x-auth-type": "Application & Application User",
+                "x-throttling-tier": "Unlimited"
+            }
+        },
+        "/omar-avro/avro/ingestMetrics/save": {
+            "get": {
+                "parameters": [
+                    {
+                        "description": "Set the description of the ingestId",
+                        "in": "query",
+                        "name": "description",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "description": "Set the end copy date using a formatted ISO standard",
+                        "in": "query",
+                        "name": "endCopy",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "description": "Set the end date using a formatted ISO standard",
+                        "in": "query",
+                        "name": "endDate",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "description": "Set the end staging date using a formatted ISO standard",
+                        "in": "query",
+                        "name": "endStaging",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "description": "ID Used to identify the ingest record",
+                        "in": "query",
+                        "name": "ingestId",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "Used to change an ingestId to another ID",
+                        "in": "query",
+                        "name": "newIngestId",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "description": "Set the start copy date using a formatted ISO standard",
+                        "in": "query",
+                        "name": "startCopy",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "description": "Set the start date using a formatted ISO standard",
+                        "in": "query",
+                        "name": "startDate",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "description": "Set the start staging date using a formatted ISO standard",
+                        "in": "query",
+                        "name": "startStaging",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "description": "Set the status",
+                        "in": "query",
+                        "name": "status",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "description": "Set the status message",
+                        "in": "query",
+                        "name": "statusMessage",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "responses": { "200": {} },
+                "summary": "Allows one to list records from the ingest database",
+                "x-auth-type": "Application & Application User",
+                "x-throttling-tier": "Unlimited"
+            }
+        },
+        "/omar-avro/avro/ingestMetrics/startCopy": {
+            "get": {
+                "parameters": [
+                    {
+                        "description": "ID Used to identify the ingest record",
+                        "in": "query",
+                        "name": "ingestId",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": { "200": {} },
+                "summary": "Marks the start of the copy process",
+                "x-auth-type": "Application & Application User",
+                "x-throttling-tier": "Unlimited"
+            }
+        },
+        "/omar-avro/avro/ingestMetrics/startIngest": {
+            "get": {
+                "parameters": [
+                    {
+                        "description": "",
+                        "in": "query",
+                        "name": "description",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "description": "ID Used to identify the ingest record",
+                        "in": "query",
+                        "name": "ingestId",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": { "200": {} },
+                "summary": "Marks the start of the ingest process",
+                "x-auth-type": "Application & Application User",
+                "x-throttling-tier": "Unlimited"
+            }
+        },
+        "/omar-avro/avro/ingestMetrics/startStaging": {
+            "get": {
+                "parameters": [
+                    {
+                        "description": "ID Used to identify the ingest record",
+                        "in": "query",
+                        "name": "ingestId",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": { "200": {} },
+                "summary": "Marks the start of the staging process",
+                "x-auth-type": "Application & Application User",
+                "x-throttling-tier": "Unlimited"
+            }
+        },
+        "/omar-avro/avro/ingestMetrics/save": {
+            "get": {
+                "parameters": [
+                    {
+                        "description": "End date for the date range",
+                        "in": "query",
+                        "name": "endDate",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "description": "Flag to specify whether to do an individual sumary",
+                        "in": "query",
+                        "name": "individual",
+                        "required": false,
+                        "type": "boolean"
+                    },
+                    {
+                        "description": "ID Used to identify the ingest record",
+                        "in": "query",
+                        "name": "ingestId",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "description": "Max records to return",
+                        "in": "query",
+                        "name": "limit",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "description": "",
+                        "in": "query",
+                        "name": "offset",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "description": "Start date for the date range",
+                        "in": "query",
+                        "name": "startDate",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "responses": { "200": {} },
+                "summary": "Allows one to show a summary for the records from the ingest database",
+                "x-auth-type": "Application & Application User",
+                "x-throttling-tier": "Unlimited"
+            }
+        },
+        "/omar-download/archive/download": {
+            "post": {
+                "parameters": [
+                    {
+                        "description": "",
+                        "in": "body",
+                        "name": "body",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "responses": { "200": {} },
+                "summary": "Download files",
+                "x-auth-type": "Application & Application User",
+                "x-throttling-tier": "Unlimited"
+            }
+        },
+        "/omar-mensa/mensa/groundToImagePoints": {
+            "post": {
+                "parameters": [
+                    {
+                        "description": "",
+                        "in": "body",
+                        "name": "body",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "responses": { "200": {} },
+                "summary": "Convert Image Points to Ground coordinates",
+                "x-auth-type": "Application & Application User",
+                "x-throttling-tier": "Unlimited"
+            }
+        },
+        "/omar-mensa/mensa/imageDistance": {
+            "post": {
+                "parameters": [
+                    {
+                        "description": "",
+                        "in": "body",
+                        "name": "body",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "responses": { "200": {} },
+                "summary": "Compute distance using a WKT format polygon in image space",
+                "x-auth-type": "Application & Application User",
+                "x-throttling-tier": "Unlimited"
+            }
+        },
+        "/omar-mensa/mensa/imagePointsToGround": {
+            "post": {
+                "parameters": [
+                    {
+                        "description": "",
+                        "in": "body",
+                        "name": "body",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "responses": { "200": {} },
+                "summary": "Convert Image Points to Ground coordinates",
+                "x-auth-type": "Application & Application User",
+                "x-throttling-tier": "Unlimited"
+            }
+        },
+        "/omar-superoverlay/superOverlay/createKml": {
+            "get": {
+                "parameters": [
+                    {
+                        "description": "id of the image (can be database id, image id, or index id)",
+                        "in": "path",
+                        "name": "id",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": { "200": {} },
+                "summary": "Create a KML SuperOverlay for viewing in GoogleEarth",
+                "x-auth-type": "Application & Application User",
+                "x-throttling-tier": "Unlimited"
+            }
+        },
+        "/omar-superoverlay/superOverlay/kmlQuery": {
+            "get": {
+                "parameters": [
+                    {
+                        "description": "An AOI, e.g. minLon,minLat,maxLon,maxLat (usually set automatically by an external GOEINT tool)",
+                        "in": "query",
+                        "name": "BBOX",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "description": "Whether to include footprints in the results or not",
+                        "in": "query",
+                        "name": "footprints",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "description": "The maximum number, [0,100], of images to be returned",
+                        "in": "query",
+                        "name": "maxFeatures",
+                        "required": false,
+                        "type": "integer"
+                    }
+                ],
+                "responses": { "200": {} },
+                "summary": "Get a KML with the most recent images in your BBOX",
+                "x-auth-type": "Application & Application User",
+                "x-throttling-tier": "Unlimited"
+            }
+        },
+        "/omar-wfs/wfs/describeFeatureType": {
+            "get": {
+                "parameters": [
+                    {
+                        "description": "Request type",
+                        "in": "query",
+                        "name": "request",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "OGC Service type",
+                        "in": "query",
+                        "name": "service",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "Type Name",
+                        "in": "query",
+                        "name": "typeName",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "Version to request",
+                        "in": "query",
+                        "name": "version",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": { "200": {} },
+                "summary": "Describe the feature from the server",
+                "x-auth-type": "Application & Application User",
+                "x-throttling-tier": "Unlimited"
+            }
+        },
+        "/omar-wfs/wfs/getCapabilities": {
+            "get": {
+                "parameters": [
+                    {
+                        "description": "Request type",
+                        "in": "query",
+                        "name": "request",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "OGC Service type",
+                        "in": "query",
+                        "name": "service",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "Version to request",
+                        "in": "query",
+                        "name": "version",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": { "200": {} },
+                "summary": "Get the capabilities of the server",
+                "x-auth-type": "Application & Application User",
+                "x-throttling-tier": "Unlimited"
+            }
+        },
+        "/omar-wfs/wfs/getFeature": {
+            "get": {
+                "parameters": [
+                    {
+                        "description": "Filter",
+                        "in": "query",
+                        "name": "filter",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "description": "Maximum Features in the result",
+                        "in": "query",
+                        "name": "maxFeatures",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "description": "Output format",
+                        "in": "query",
+                        "name": "outputFormat",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "description": "Property name (comma separated fields)",
+                        "in": "query",
+                        "name": "propertyName",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "description": "Request type",
+                        "in": "query",
+                        "name": "request",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "Result type",
+                        "in": "query",
+                        "name": "resultType",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "OGC Service type",
+                        "in": "query",
+                        "name": "service",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "Sort by",
+                        "in": "query",
+                        "name": "sortBy",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "description": "Starting offset",
+                        "in": "query",
+                        "name": "startIndex",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "description": "Type Name",
+                        "in": "query",
+                        "name": "typeName",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "Version to request",
+                        "in": "query",
+                        "name": "version",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": { "200": {} },
+                "summary": "Get the capabilities of the server",
+                "x-auth-type": "Application & Application User",
+                "x-throttling-tier": "Unlimited"
+            }
+        },
+        "/omar-wms/imageSpace/getThumbnail": {
+            "get": {
+                "parameters": [
+                    {
+                        "description": "Image entry id (typically 0)",
+                        "in": "query",
+                        "name": "entry",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "Filename",
+                        "in": "query",
+                        "name": "filename",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "Output image format",
+                        "in": "query",
+                        "name": "format",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "description": "Overview image size",
+                        "in": "query",
+                        "name": "size",
+                        "required": false,
+                        "type": "integer"
+                    }
+                ],
+                "responses": { "200": {} },
+                "summary": "Get the thumbnail of the passed in file name",
+                "x-auth-type": "Application & Application User",
+                "x-throttling-tier": "Unlimited"
+            }
+        },
+        "/omar-wms/imageSpace/getTile": {
+            "get": {
+                "parameters": [
+                    {
+                        "description": "Bands",
+                        "in": "query",
+                        "name": "bands",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "description": "Brightness Operation",
+                        "in": "query",
+                        "name": "brightness",
+                        "required": false,
+                        "type": "float"
+                    },
+                    {
+                        "description": "Contrast Operation",
+                        "in": "query",
+                        "name": "contrast",
+                        "required": false,
+                        "type": "float"
+                    },
+                    {
+                        "description": "Image entry (typically 0)",
+                        "in": "query",
+                        "name": "entry",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "Filename",
+                        "in": "query",
+                        "name": "filename",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "Output image format",
+                        "in": "query",
+                        "name": "format",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "description": "Use Center Tile for Histogram",
+                        "in": "query",
+                        "name": "histCenterTile",
+                        "required": false,
+                        "type": "boolean"
+                    },
+                    {
+                        "description": "Histogram Operation",
+                        "in": "query",
+                        "name": "histOp",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "description": "Interpolation Operation",
+                        "in": "query",
+                        "name": "resamplerFilter",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "description": "Sharpen Operation",
+                        "in": "query",
+                        "name": "sharpenMode",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "description": "Tile size",
+                        "in": "query",
+                        "name": "tileSize",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "description": "Tile in x direction",
+                        "in": "query",
+                        "name": "x",
+                        "required": true,
+                        "type": "integer"
+                    },
+                    {
+                        "description": "Tile in y direction",
+                        "in": "query",
+                        "name": "y",
+                        "required": true,
+                        "type": "integer"
+                    },
+                    {
+                        "description": "Resolution level (0 full resolution)",
+                        "in": "query",
+                        "name": "z",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": { "200": {} },
+                "summary": "Get a tile from the passed in image file",
+                "x-auth-type": "Application & Application User",
+                "x-throttling-tier": "Unlimited"
+            }
+        },
+        "/omar-wms/imageSpace/getTileOverlay": {
+            "get": {
+                "parameters": [
+                    {
+                        "description": "Output image format",
+                        "in": "query",
+                        "name": "format",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "description": "Tile size",
+                        "in": "query",
+                        "name": "tileSize",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "description": "Tile in x direction",
+                        "in": "query",
+                        "name": "x",
+                        "required": true,
+                        "type": "integer"
+                    },
+                    {
+                        "description": "Tile in y direction",
+                        "in": "query",
+                        "name": "y",
+                        "required": true,
+                        "type": "integer"
+                    },
+                    {
+                        "description": "Resolution level (0 full resolution)",
+                        "in": "query",
+                        "name": "z",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": { "200": {} },
+                "summary": "Get the footprint of tile and its name",
+                "x-auth-type": "Application & Application User",
+                "x-throttling-tier": "Unlimited"
+            }
+        },
+        "/omar-wms/wms/getCapabilities": {
+            "get": {
+                "parameters": [
+                    {
+                        "description": "Request type",
+                        "in": "query",
+                        "name": "request",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "OGC Service type",
+                        "in": "query",
+                        "name": "service",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "Version to request",
+                        "in": "query",
+                        "name": "version",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": { "200": {} },
+                "summary": "Get the capabilities of the server",
+                "x-auth-type": "Application & Application User",
+                "x-throttling-tier": "Unlimited"
+            }
+        },
+        "/omar-wms/wms/getMap": {
+            "get": {
+                "parameters": [
+                    {
+                        "description": "Bounding box",
+                        "in": "query",
+                        "name": "bbox",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "Filter",
+                        "in": "query",
+                        "name": "filter",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "description": "MIME Type of result image",
+                        "in": "query",
+                        "name": "format",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "description": "Height of result image",
+                        "in": "query",
+                        "name": "height",
+                        "required": true,
+                        "type": "integer"
+                    },
+                    {
+                        "description": "Type name",
+                        "in": "query",
+                        "name": "layers",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "Request type",
+                        "in": "query",
+                        "name": "request",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "OGC Service type",
+                        "in": "query",
+                        "name": "service",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "Spatial Reference System",
+                        "in": "query",
+                        "name": "srs",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "Styles to apply to image",
+                        "in": "query",
+                        "name": "styles",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "Version to request",
+                        "in": "query",
+                        "name": "version",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "Width of result image",
+                        "in": "query",
+                        "name": "width",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": { "200": {} },
+                "summary": "Get image from the server",
+                "x-auth-type": "Application & Application User",
+                "x-throttling-tier": "Unlimited"
+            }
+        }
+    },
+    "swagger": "2.0"
+}
